@@ -44,9 +44,9 @@ ModuleSceneKen::ModuleSceneKen(bool start_enabled) : Module(start_enabled)
 
 	// TODO 4: Setup Girl Animation from coordinates from ken_stage.png
 	// flag animation
-	girl.frames.push_back({ 624, 16, 40, 40 });
-	girl.frames.push_back({ 624, 80 + 4, 40, 40 });
-	girl.frames.push_back({ 624, 144, 40, 40 });
+	girl.frames.push_back({ 624, 16, 40, 56 });
+	girl.frames.push_back({ 624, 80, 40, 56 });
+	girl.frames.push_back({ 624, 144, 40, 56 });
 	girl.speed = 0.08f;
 	////// ship animation
 	//shipAnim.frames.push_back({ 8, 24, 521, 181 });
@@ -88,7 +88,7 @@ update_status ModuleSceneKen::Update()
 {
 	
 	// TODO 5: make sure the ship goes up and down
-	currentTime = SDL_GetTicks() / 2.0f;
+	currentTime = SDL_GetTicks() / 3.0f;
 	if (currentTime > lastTime + 250) {
 		if (posY == 0) {
 			posY += 1;
@@ -109,7 +109,7 @@ update_status ModuleSceneKen::Update()
 	
 	//App->renderer->Blit(graphics, 0, 0, &(shipAnim.GetCurrentFrame()), 1.0f); // ship
 	// TODO 6: Draw the girl. Make sure it follows the ship movement!
-	App->renderer->Blit(graphics, 192, 104 + posY , &(girl.GetCurrentFrame()), 2.0f); // girl animation
+	App->renderer->Blit(graphics, 192, 104 + posY, &(girl.GetCurrentFrame()), 2.0f); // girl animation
 	App->renderer->Blit(graphics, 0, 170, &ground);
 
 	// TODO 10: Build an entire new scene "honda", you can find its
