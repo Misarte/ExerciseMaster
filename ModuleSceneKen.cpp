@@ -86,7 +86,6 @@ bool ModuleSceneKen::CleanUp()
 // Update: draw background
 update_status ModuleSceneKen::Update()
 {
-	
 	// TODO 5: make sure the ship goes up and down
 	currentTime = SDL_GetTicks() / 2.0f;
 	if (currentTime > lastTime + 250) {
@@ -114,14 +113,14 @@ update_status ModuleSceneKen::Update()
 
 	// TODO 10: Build an entire new scene "honda", you can find its
 	// and music in the Game/ folder
+	// TODO 11: Make that pressing space triggers a switch to honda logic module
+	// using FadeToBlack module
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
 	{
 		App->fade->FadeToBlack(App->scene_honda, App->scene_ken, 3.0f);
 		/*App->scene_index = 2;
 		App->ChangeScene();*/
 	}
-	// TODO 11: Make that pressing space triggers a switch to honda logic module
-	// using FadeToBlack module
 
 	return UPDATE_CONTINUE;
 }
