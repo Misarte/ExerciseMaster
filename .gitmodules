@@ -1,3 +1,6 @@
 [submodule "Engine-Master"]
 	path = Engine-Master
 	url = https://github.com/Misarte/Engine-Master.git
+[submodule "SDL-Game2-Master"]
+	path = SDL-Game2-Master
+	url = https://github.com/Misarte/SDL-Game2-Master.git
